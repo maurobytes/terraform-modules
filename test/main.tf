@@ -1,5 +1,10 @@
+provider "azurerm" {
+  features {}
+  # The provider will inherit authentication from the root module or environment variables
+}
+
 module "vnet"{
-    source = "../terraform-modules"
+    source = "./.."
     vnet_name = "demo-vnet"
     address_space = ["10.0.0.0/16"]
     subnets       = {
